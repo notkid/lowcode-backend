@@ -11,12 +11,21 @@ const users = [
 ];
 
 class UserService extends Service {
+  
+  constructor(app) {
+    super(app);
+    const { ctx } = this;
+    console.log(ctx.model)
+    this.User = ctx.model.User;
+  }
   async find(username) {
+    console.log(this.User)
     const user = await users.find(user => {
       return user.username === username;
     });
     return user;
   }
+
 
   async login(username, password) {
     const { ctx } = this;

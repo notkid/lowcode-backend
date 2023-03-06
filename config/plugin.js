@@ -18,4 +18,8 @@ module.exports = {
     enable: true,
     package: 'egg-oss',
   },
+  sequelize: {
+    enable: true,
+    package: 'egg-sequelize',
+  },
 };
